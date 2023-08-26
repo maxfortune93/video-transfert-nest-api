@@ -1,0 +1,29 @@
+GET http://localhost:3000
+
+###
+GET http://localhost:3000/categories
+
+###
+GET http://localhost:3000/categories/4
+
+###
+POST  http://localhost:3000/categories
+Content-Type: application/json
+
+{
+    "name": "Mano",
+    "description": "This is a description4"
+}
+
+###
+PATCH   http://localhost:3000/categories/1
+Content-Type: application/json
+
+{
+    "name": "documentário",
+    "description": "This is a description"
+}
+
+###
+DELETE    http://localhost:3000/categories/4
+Content-Type: application/json

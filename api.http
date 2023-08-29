@@ -27,3 +27,62 @@ Content-Type: application/json
 ###
 DELETE    http://localhost:3000/categories/4
 Content-Type: application/json
+
+
+###
+GET http://localhost:3000/videos
+
+###
+GET http://localhost:3000/videos/4
+
+# ###
+# POST  http://localhost:3000/videos
+# Content-Type: application/json
+
+# {
+#     "title": "video teste2",
+#     "description": "video test 2",
+#     "category_id": 1
+# }
+
+
+###
+POST  http://localhost:3000/videos
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary1234
+
+------WebKitFormBoundary1234
+Content-Disposition: form-data; name="title"
+
+Video 1
+------WebKitFormBoundary1234
+Content-Disposition: form-data; name="description"
+
+Description 1
+------WebKitFormBoundary1234
+Content-Disposition: form-data; name="category_id"
+
+1
+------WebKitFormBoundary1234
+Content-Disposition: form-data; name="file"; filename="video.mp4"
+Content-Type: video/mp4
+#readme.md
+#./video.mp4
+< ./readme.md
+------WebKitFormBoundary1234--
+
+###
+GET http://localhost:3000/videos/file/1693125766520.86.mp4
+
+
+###
+PATCH   http://localhost:3000/videos/1
+Content-Type: application/json
+
+{
+    "name": "documentário",
+    "description": "This is a description"
+}
+
+###
+DELETE    http://localhost:3000/videos/4
+Content-Type: application/json
